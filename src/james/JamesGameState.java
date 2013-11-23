@@ -11,6 +11,7 @@ import org.newdawn.slick.state.StateBasedGame;
 
 public class JamesGameState extends BasicGameState {
 	boolean debug = false;
+	InputHandler inputH;
 	int stateID = -1;
 	Mapy map;
 	Vector2f hlTile; // the tile the highlighter has selected.
@@ -24,7 +25,8 @@ public class JamesGameState extends BasicGameState {
 	public void init(GameContainer container, StateBasedGame game)
 			throws SlickException {
 		map = new Mapy("data/testmap.tmx");
-		hlMap = new Vector2f(12*32,8*32);
+		inputH = new InputHandler();
+		hlMap = new Vector2f(12 * 32, 8 * 32);
 		hlTile = new Vector2f(12, 8);
 		// TODO Auto-generated method stub
 
@@ -54,29 +56,11 @@ public class JamesGameState extends BasicGameState {
 			throws SlickException {
 		// Create an Input reader called input.
 		Input input = container.getInput();
+		inputH.InputFromGameState(container, input, this);
 		hlMap.x = (12 * 32) + ((map.mapX % 32));
 		hlMap.y = (8 * 32) + ((map.mapY % 32));
-		hlTile.x=12-((map.mapX/32));
-		hlTile.y=8-((map.mapY/32));
-		
-		if (input.isKeyDown(Input.KEY_LCONTROL)) {
-
-			if (input.isKeyDown(Input.KEY_LEFT)) {
-				map.mapX += 4;
-			} else if (input.isKeyDown(Input.KEY_UP)) {
-				map.mapY += 4;
-			} else if (input.isKeyDown(Input.KEY_RIGHT)) {
-				map.mapX -= 4;
-			} else if (input.isKeyDown(Input.KEY_DOWN)) {
-				map.mapY -= 4;
-			} else if (input.isKeyPressed(Input.KEY_R)) {
-				map.mapX = 0;
-				map.mapY = 0;
-			}
-		}
-		if (input.isKeyDown(Input.KEY_ESCAPE)) {
-			container.exit();
-		}
+		hlTile.x = 12 - ((map.mapX / 32));
+		hlTile.y = 8 - ((map.mapY / 32));
 		Display.sync(60);
 
 	}

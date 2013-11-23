@@ -27,8 +27,10 @@ public class MainMenuState extends BasicGameState {
 			throws SlickException {
 		g.drawString("Push -a- to enter game", (container.getWidth() / 8),
 				container.getHeight() / 8);
-		g.drawString("Push -b- to enter credits",
-				(container.getWidth() / 8), (container.getHeight() / 8)*2);
+		g.drawString("Push -b- to enter credits", (container.getWidth() / 8),
+				(container.getHeight() / 8) * 2);
+		g.drawString("Push -b- in game to plant trees and watch them grow",
+				(container.getWidth() / 8), (container.getHeight() / 8) * 3);
 
 		// TODO Auto-generated method stub
 
@@ -43,8 +45,7 @@ public class MainMenuState extends BasicGameState {
 		// 2.
 		if (input.isKeyDown(Input.KEY_A)) {
 			game.enterState(2);
-		}
-		else if (input.isKeyDown(Input.KEY_B)){
+		} else if (input.isKeyDown(Input.KEY_B)) {
 			game.enterState(3);
 		}
 		Display.sync(60);
