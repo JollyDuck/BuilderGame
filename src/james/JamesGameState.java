@@ -15,7 +15,7 @@ public class JamesGameState extends BasicGameState {
 	static ResourceCounter resH;
 	static TileManager tilM;
 	int stateID = -1;
-	Mapy map;
+	static Mapy map;
 	Vector2f hlTile; // the tile the highlighter has selected.
 	Vector2f hlMap; // the coords to draw it on.
 
@@ -63,6 +63,7 @@ public class JamesGameState extends BasicGameState {
 		// Create an Input reader called input.
 		Input input = container.getInput();
 		inpH.InputFromGameState(container, input, this);
+		tilM.updateTiles(map.tileArray);
 		hlMap.x = (12 * 32) + ((map.mapX % 32));
 		hlMap.y = (8 * 32) + ((map.mapY % 32));
 		hlTile.x = 12 - ((map.mapX / 32));

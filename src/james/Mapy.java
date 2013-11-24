@@ -9,7 +9,7 @@ import org.newdawn.slick.util.pathfinding.TileBasedMap;
 public class Mapy implements TileBasedMap {
 	private TiledMap map;
 	private TiledMap mapTileSet;
-	private Tile[][] tileArray;
+	public Tile[][] tileArray;
 	public int mapX, mapY;
 	public Image highlighted;
 
@@ -32,10 +32,14 @@ public class Mapy implements TileBasedMap {
 				tileArray[xAxis][yAxis] = new Tile(Integer.parseInt(map
 						.getTileProperty(tileID, "upgradeTime", "0")),
 						(Integer.parseInt(map.getTileProperty(tileID,
-								"upgradeTo", "0"))), (Integer.parseInt(map.getTileProperty(tileID, "make", "0"))));
+								"upgradeTo", "0"))), (Integer.parseInt(map.getTileProperty(tileID, "make", "0"))), tileID);
 			}
 		}
 
+	}
+	
+	public void changeTile(int x, int y, int layerIndex, int tileid){
+		map.setTileId(x, y, layerIndex, tileid);
 	}
 
 	@Override
@@ -66,6 +70,10 @@ public class Mapy implements TileBasedMap {
 
 	public TiledMap getThisMap() {
 		return map;
+	}
+	
+	public TiledMap getMapTileSet(){
+		return mapTileSet;
 	}
 
 }
