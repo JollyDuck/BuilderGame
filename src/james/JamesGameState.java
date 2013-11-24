@@ -11,7 +11,9 @@ import org.newdawn.slick.state.StateBasedGame;
 
 public class JamesGameState extends BasicGameState {
 	boolean debug = false;
-	InputHandler inputH;
+	static InputHandler inpH;
+	static ResourceCounter resH;
+	static TileManager tilM;
 	int stateID = -1;
 	Mapy map;
 	Vector2f hlTile; // the tile the highlighter has selected.
@@ -24,8 +26,10 @@ public class JamesGameState extends BasicGameState {
 	@Override
 	public void init(GameContainer container, StateBasedGame game)
 			throws SlickException {
-		map = new Mapy("data/testmap.tmx");
-		inputH = new InputHandler();
+		map = new Mapy("data/testmap.tmx", "data/tileSetInMap.tmx");
+		tilM = new TileManager();
+		inpH = new InputHandler();
+		resH = new ResourceCounter();
 		hlMap = new Vector2f(12 * 32, 8 * 32);
 		hlTile = new Vector2f(12, 8);
 		// TODO Auto-generated method stub
@@ -42,6 +46,8 @@ public class JamesGameState extends BasicGameState {
 		g.drawString(Integer.toString(map.mapY), 0, 32);
 		g.drawString(Float.toString(hlTile.x), 0, 64);
 		g.drawString(Float.toString(hlTile.y), 0, 96);
+		g.drawString(Integer.toString(resH.getTreeSeeds()), 700, 0);
+		g.drawString(Integer.toString(resH.getCabbage()), 700, 32);
 		/*
 		 * g.drawString("Push -a- to enter game", (container.getWidth() / 8),
 		 * container.getHeight() / 8); g.drawString("Push -b- to enter credits",
@@ -56,7 +62,7 @@ public class JamesGameState extends BasicGameState {
 			throws SlickException {
 		// Create an Input reader called input.
 		Input input = container.getInput();
-		inputH.InputFromGameState(container, input, this);
+		inpH.InputFromGameState(container, input, this);
 		hlMap.x = (12 * 32) + ((map.mapX % 32));
 		hlMap.y = (8 * 32) + ((map.mapY % 32));
 		hlTile.x = 12 - ((map.mapX / 32));

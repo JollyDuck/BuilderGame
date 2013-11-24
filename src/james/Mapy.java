@@ -7,18 +7,22 @@ import org.newdawn.slick.util.pathfinding.PathFindingContext;
 import org.newdawn.slick.util.pathfinding.TileBasedMap;
 
 public class Mapy implements TileBasedMap {
-	private Tile[][] tileArray;
 	private TiledMap map;
+	private TiledMap mapTileSet;
+	private Tile[][] tileArray;
 	public int mapX, mapY;
 	public Image highlighted;
 
-	public Mapy(String URL) throws SlickException {
+	public Mapy(String URL, String URL2) throws SlickException {
 		map = new TiledMap(URL);
+		mapTileSet = new TiledMap(URL2);
 		highlighted = new Image("data/highlighted.png");
 		loadMap();
 	}
 
 	private void loadMap() throws SlickException {
+		StartUp.TFW.write("./output.txt", "data");
+
 		tileArray = new Tile[map.getWidth()][map.getHeight()];
 
 		for (int xAxis = 0; xAxis < map.getWidth(); xAxis++) {
@@ -26,9 +30,12 @@ public class Mapy implements TileBasedMap {
 
 				int tileID = map.getTileId(xAxis, yAxis, 0);
 				tileArray[xAxis][yAxis] = new Tile(Integer.parseInt(map
-						.getTileProperty(tileID, "type", "0")));
+						.getTileProperty(tileID, "upgradeTime", "0")),
+						(Integer.parseInt(map.getTileProperty(tileID,
+								"upgradeTo", "0"))), (Integer.parseInt(map.getTileProperty(tileID, "make", "0"))));
 			}
 		}
+
 	}
 
 	@Override

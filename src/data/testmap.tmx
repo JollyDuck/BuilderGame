@@ -14,38 +14,73 @@
   </tile>
   <tile id="2">
    <properties>
-    <property name="cost" value="4"/>
-    <property name="res" value="1"/>
-    <property name="type" value="2"/>
+    <property name="manage" value="true"/>
    </properties>
   </tile>
   <tile id="8">
    <properties>
+    <property name="house" value="true"/>
     <property name="type" value="1"/>
    </properties>
   </tile>
   <tile id="9">
    <properties>
-    <property name="cost" value="3.75"/>
+    <property name="manage" value="true"/>
     <property name="res" value="1"/>
    </properties>
   </tile>
   <tile id="10">
    <properties>
-    <property name="cost" value="3.5"/>
+    <property name="manage" value="true"/>
     <property name="res" value="1"/>
    </properties>
   </tile>
   <tile id="11">
    <properties>
-    <property name="cost" value="3.25"/>
+    <property name="manage" value="true"/>
     <property name="res" value="1"/>
+   </properties>
+  </tile>
+  <tile id="15">
+   <properties>
+    <property name="manage" value="true"/>
+    <property name="upgradeTime" value="10"/>
+    <property name="upgradeTo" value="17"/>
+   </properties>
+  </tile>
+  <tile id="16">
+   <properties>
+    <property name="manage" value="true"/>
+    <property name="upgradeTime" value="10"/>
+    <property name="upgradeTo" value="18"/>
+   </properties>
+  </tile>
+  <tile id="17">
+   <properties>
+    <property name="manage" value="true"/>
+    <property name="upgradeTime" value="10"/>
+    <property name="upgradeTo" value="22"/>
+   </properties>
+  </tile>
+  <tile id="21">
+   <properties>
+    <property name="manage" value="true"/>
+    <property name="upgradeTime" value="15"/>
+    <property name="upgradeTo" value="23"/>
+   </properties>
+  </tile>
+  <tile id="22">
+   <properties>
+    <property name="make" value="2"/>
+    <property name="manage" value="true"/>
+    <property name="upgradeTime" value="3"/>
+    <property name="upgradeTo" value="16"/>
    </properties>
   </tile>
  </tileset>
  <layer name="Tile Layer 1" width="50" height="50">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA+2VMQ6AMAwDWzb+/2EWWBABkzYJQjfcQiuMXaf01lr/EcuOuu+MtV7lI1I7S6OLGjO+JcqP9U41Q6VjV2tRZz4jQ8V7VLes+bUy9M76F2bwWFvFfZa3KA+eDJVnyvlmnMddhsq+Kh+qtjpLd3lF9kr5ViWHN1qRPp669ybfrD559T33T9adpeh7ZifTx8hsR8zQiA9lzeMls0sj/7XKHqmZz+hn5l1VrQ8AAAAAAAAAAAAAAPVsjTspbhAnAAA=
+   H4sIAAAAAAAAA+2Vyw7DIAwEoZxya///Z6tIzYUWWB42UTWHuQQLe9c2iSGE+Ec8PqhxOaXzXTosc3vliGKOFbVY6SndqXiYKrTmz6rnIzFnva+MS0evb6t0KDucx5/1Pn+Qwne9d9jB6+zI4kozlDrvt+hHy0Plm9Jfj37UPFTidulQc6u7VPPLcq6UWhUfenJZ6mjNXo+/XvM0mn/k/fF6s5T8I7vjqWNmty12aEaHcjaixXOWZv5rO+dI9XzFfHq+VbvzAwAAAAAAAAAAAADAft4XpHVPECcAAA==
   </data>
  </layer>
 </map>
