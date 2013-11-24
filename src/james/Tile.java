@@ -33,7 +33,7 @@ public class Tile {
 			manage = false;
 		}
 	}
-
+	
 	public Tile update() {
 		if (manage) {
 			timeTillUpgrade--;
@@ -45,10 +45,10 @@ public class Tile {
 				default:
 					break;
 				case 1:
-					JamesGameState.resH.addWood();
+					JamesGameState.resH.addWood(4);
 					break;
 				case 2:
-					JamesGameState.resH.addCabbage();
+					JamesGameState.resH.addCabbage(16);
 					break;
 				}
 

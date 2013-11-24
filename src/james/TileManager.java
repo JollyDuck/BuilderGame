@@ -16,6 +16,9 @@ public class TileManager {
 	}
 	
 	public void changeTile(int x, int y, int layer, int ID){
+		Tile tempT = JamesGameState.map.tileArrayTileSet[ID-1];
+		JamesGameState.map.tileArray[x][y] = tempT;
+		JamesGameState.map.getThisMap().setTileId(x, y, layer, tempT.currentTileID);
 		
 	}
 	

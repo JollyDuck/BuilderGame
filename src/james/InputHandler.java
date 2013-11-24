@@ -26,9 +26,8 @@ public class InputHandler {
 		if (input.isKeyDown(Input.KEY_ESCAPE)) {
 			c.exit();
 		} else if (input.isKeyPressed(Input.KEY_B)) {
-			JamesGameState.map.getThisMap().setTileId(
-					(int) jamesGameState.hlTile.x,
-					(int) jamesGameState.hlTile.y, 0, 12);
+			JamesGameState.tilM.changeTile((int) jamesGameState.hlTile.x,
+					(int) jamesGameState.hlTile.y, 0, 16);
 		}
 
 	}

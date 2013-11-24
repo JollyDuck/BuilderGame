@@ -31,24 +31,24 @@ public class ResourceCounter {
 		return treeSeeds;
 	}
 
-	public void addTreeSeeds() {
-		treeSeeds++;
+	public void addTreeSeeds(int howMany) {
+		treeSeeds+= howMany;
 	}
 
 	public int getCabbage() {
 		return cabbage;
 	}
 
-	public void addCabbage() {
-		treeSeeds++;
+	public void addCabbage(int howMany) {
+		cabbage += howMany;
 	}
 
 	public int getWood() {
 		return wood;
 	}
 
-	public void addWood() {
-		wood++;
+	public void addWood(int howMany) {
+		wood+= howMany;
 	}
 
 }

@@ -10,6 +10,7 @@ public class Mapy implements TileBasedMap {
 	private TiledMap map;
 	private TiledMap mapTileSet;
 	public Tile[][] tileArray;
+	public Tile[] tileArrayTileSet;
 	public int mapX, mapY;
 	public Image highlighted;
 
@@ -24,21 +25,31 @@ public class Mapy implements TileBasedMap {
 		StartUp.TFW.write("./output.txt", "data");
 
 		tileArray = new Tile[map.getWidth()][map.getHeight()];
+		tileArrayTileSet = new Tile[mapTileSet.getWidth()];
 
 		for (int xAxis = 0; xAxis < map.getWidth(); xAxis++) {
 			for (int yAxis = 0; yAxis < map.getHeight(); yAxis++) {
-
 				int tileID = map.getTileId(xAxis, yAxis, 0);
 				tileArray[xAxis][yAxis] = new Tile(Integer.parseInt(map
 						.getTileProperty(tileID, "upgradeTime", "0")),
 						(Integer.parseInt(map.getTileProperty(tileID,
-								"upgradeTo", "0"))), (Integer.parseInt(map.getTileProperty(tileID, "make", "0"))), tileID);
+								"upgradeTo", "0"))), (Integer.parseInt(map
+								.getTileProperty(tileID, "make", "0"))), tileID);
 			}
+		}
+		for (int xAxis = 0; xAxis < mapTileSet.getWidth(); xAxis++) {
+
+			int tileID1 = mapTileSet.getTileId(xAxis, 0, 0);
+			tileArrayTileSet[xAxis] = new Tile(Integer.parseInt(mapTileSet
+					.getTileProperty(tileID1, "upgradeTime", "0")),
+					(Integer.parseInt(mapTileSet.getTileProperty(tileID1,
+							"upgradeTo", "0"))), (Integer.parseInt(mapTileSet
+							.getTileProperty(tileID1, "make", "0"))), tileID1);
 		}
 
 	}
-	
-	public void changeTile(int x, int y, int layerIndex, int tileid){
+
+	public void changeTile(int x, int y, int layerIndex, int tileid) {
 		map.setTileId(x, y, layerIndex, tileid);
 	}
 
@@ -71,8 +82,8 @@ public class Mapy implements TileBasedMap {
 	public TiledMap getThisMap() {
 		return map;
 	}
-	
-	public TiledMap getMapTileSet(){
+
+	public TiledMap getMapTileSet() {
 		return mapTileSet;
 	}
 
