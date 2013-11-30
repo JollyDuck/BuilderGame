@@ -3,14 +3,17 @@ package james;
 import org.newdawn.slick.geom.Vector2f;
 import org.newdawn.slick.tiled.TiledMap;
 
+import states.JamesGameState;
+import states.StartUp;
+
 public class Tile {
 	Vector2f position;
-	boolean manage = true;
-	int currentTileID;
-	int upgradeTime;
+	public boolean manage = true;
+	public int currentTileID;
+	public int upgradeTime;
 	private int timeTillUpgrade;
-	int tileIDToChangeTo;
-	int resourceToGenerate; // 1 for wood, 2 for cabbage.
+	public int tileIDToChangeTo;
+	public int resourceToGenerate; // 1 for wood, 2 for cabbage.
 
 	/**
 	 * 

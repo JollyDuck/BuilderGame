@@ -3,6 +3,8 @@ package james;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Input;
 
+import states.JamesGameState;
+
 public class InputHandler {
 
 	public void InputFromGameState(GameContainer c, Input input) {

@@ -6,6 +6,8 @@ import org.newdawn.slick.tiled.TiledMap;
 import org.newdawn.slick.util.pathfinding.PathFindingContext;
 import org.newdawn.slick.util.pathfinding.TileBasedMap;
 
+import states.StartUp;
+
 public class Mapy implements TileBasedMap {
 	private TiledMap map;
 	private TiledMap mapTileSet;
