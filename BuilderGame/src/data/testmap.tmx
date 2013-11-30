@@ -14,6 +14,7 @@
   </tile>
   <tile id="2">
    <properties>
+    <property name="cost" value="20"/>
     <property name="manage" value="true"/>
    </properties>
   </tile>
@@ -77,10 +78,15 @@
     <property name="upgradeTo" value="16"/>
    </properties>
   </tile>
+  <tile id="23">
+   <properties>
+    <property name="cost" value="5"/>
+   </properties>
+  </tile>
  </tileset>
  <layer name="Tile Layer 1" width="50" height="50">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA+2Vuw7DIAxFoZmytVP//0+rSGGhCVweNlV1hrMEC/te2ySGEOIf8ThR43LuzlfpsMztlSOKOWbUYqXn7k7Fw61Abf6set4Tc9T7ykg6Wn2bpUPZ4Tz+qPd5wRa+6/2FHUxnexaXvH9f6Gu536IfNQ+Vb0p/PfpR8lCJW6VDza3uUskvy7lSalV8aMllqaM2ey3+es1Tb/6e98frzVLy9+yOp46R3bbYoREdylmPFs9ZGvmvrZwj1fMZ8+n5Vq3ODwAAAAAAAAAAAAAA6/kAujYlbBAnAAA=
+   H4sIAAAAAAAAA+2Vyw7CIBBFwa7c6cr+/5dqE5sYFLhQZmjMWZxNmXDnzoPGEEL8Iy5v1LiU3PksH5baXhpR1BiRi5Wf3J1KDZcCtfmz6nlPzJbvPWH30Vq3UT6UHU7jt3xvP1jCd75n2MH97JrE7bV/vFgTfy33W/SjVsPPb2sGpb8e/SjVUImb5UPVVnepVC/LuVJyVerQomXpozZ7LfX1mqde/Z73x+vNUvR7dsfTx5HdttihIz6Usx4vnrOk6Ld6mLEPo/Rn/PvOpA8AAAAAAAAAAAAAAPN5Asewx7wQJwAA
   </data>
  </layer>
 </map>

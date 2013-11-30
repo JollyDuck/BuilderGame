@@ -18,11 +18,11 @@ public class TileManager {
 
 	public void updateSelectedTile(int i) {
 		selectedTile += i;
-		if (selectedTile >= 24) {
+		if (selectedTile >= 28) {
 			selectedTile = 1;
 		}
 		if (selectedTile <= 0) {
-			selectedTile = 23;
+			selectedTile = 27;
 		}
 		selectedTileImage = JamesGameState.map.getMapTileSet().getTileImage(
 				selectedTile - 1, 0, 0);

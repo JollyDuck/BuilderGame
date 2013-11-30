@@ -1,9 +1,7 @@
 package states;
 
-import james.InputHandler;
-import james.Mapy;
-import managers.ResourceCounter;
-import managers.TileManager;
+import james.*;
+import managers.*;
 
 import org.lwjgl.opengl.Display;
 import org.newdawn.slick.GameContainer;
@@ -18,6 +16,7 @@ public class JamesGameState extends BasicGameState {
 	public static InputHandler inpH;
 	public static ResourceCounter resH;
 	public static TileManager tilM;
+	public static MinionManager minM;
 	public int stateID = -1;
 	public static Mapy map;
 	public static Vector2f hlTile; // the tile the highlighter has selected.
@@ -34,6 +33,7 @@ public class JamesGameState extends BasicGameState {
 		tilM = new TileManager();
 		inpH = new InputHandler();
 		resH = new ResourceCounter();
+		minM = new MinionManager(map);
 		hlMap = new Vector2f(12 * 32, 8 * 32);
 		hlTile = new Vector2f(12, 8);
 		// TODO Auto-generated method stub
@@ -46,6 +46,7 @@ public class JamesGameState extends BasicGameState {
 		// Draw map
 		map.getThisMap().render(map.mapX, map.mapY, 0);
 		g.drawImage(map.highlighted, hlMap.x, hlMap.y);
+		minM.render(g);
 		g.drawString(Integer.toString(map.mapX), 0, 0);
 		g.drawString(Integer.toString(map.mapY), 0, 32);
 		g.drawString(Float.toString(hlTile.x), 0, 64);
@@ -69,6 +70,7 @@ public class JamesGameState extends BasicGameState {
 		Input input = container.getInput();
 		inpH.InputFromGameState(container, input);
 		tilM.updateTiles(map.tileArray);
+		minM.updateMinions();
 		hlMap.x = (12 * 32) + ((map.mapX % 32));
 		hlMap.y = (8 * 32) + ((map.mapY % 32));
 		hlTile.x = 12 - ((map.mapX / 32));
